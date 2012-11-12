@@ -2,6 +2,8 @@ define(function (require) {
   'use strict';
   var $ = require('jquery'),
     Backbone = require('backbone'),
+    mustache = require('mustache'),
+    html = require('text!app/slide-view.html'),
     SlideView;
 
   SlideView = Backbone.View.extend({
@@ -10,8 +12,7 @@ define(function (require) {
     },
 
     render: function () {
-      $('#root').html('<h1>' + this.model.get('title') + '</h1>'
-        + '<pre>' + this.model.get('content') + '</pre>');
+      $('#root').html(mustache.to_html(html, this.model.toJSON()));
     }
   });
 
