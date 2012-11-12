@@ -1,8 +1,11 @@
 define(function (require) {
-    // Load any app-specific modules
-    // with a relative require call,
-    // like:
-    // var util = require('./util');
+  'use strict';
 
-    console.log('Hello world');
+  var Backbone = require('backbone'),
+    PresentationController = require('app/presentation-controller'),
+    router;
+
+  router = new PresentationController();
+  Backbone.history.start({pushState: true});
+
 });

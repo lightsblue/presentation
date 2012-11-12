@@ -1,4 +1,11 @@
 PresentationSrc::Application.routes.draw do
+  # the slides resource
+  resources :slides
+
+  # everything else routes to the Single Page App controller
+  root :to => "spa#index"
+  match "*rest" => "spa#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
