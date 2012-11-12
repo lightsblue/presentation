@@ -1,0 +1,6 @@
+{
+  "amd": {},
+  "volo": {
+    "baseUrl": "public/js/lib"
+  }
+}
