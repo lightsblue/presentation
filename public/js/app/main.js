@@ -2,10 +2,7 @@ define(function (require) {
   'use strict';
 
   var Backbone = require('backbone'),
-    PresentationController = require('app/presentation-controller'),
-    router;
+    controller = require('app/presentation-controller');
 
-  router = new PresentationController();
   Backbone.history.start({pushState: true});
-
 });

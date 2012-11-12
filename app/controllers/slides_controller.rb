@@ -15,6 +15,13 @@ class SlidesController < ApplicationController
   def show
     @slide = Slide.find(params[:id])
 
+    # return the ordered list of slide IDs in the deck
+    deck = ActiveRecord::Base.connection.execute('select id from slides').map { |i| i['id'] }
+
+    unless deck.nil? || deck.length == 0
+      @slide[:deck] = deck
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @slide }

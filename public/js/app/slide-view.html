@@ -1,2 +1,13 @@
 <h1>{{title}}</h1>
-<pre>{{content}}</pre>
+
+<pre class='slide'>{{content}}</pre>
+
+<span>{{curSlide}} of {{totalSlides}}</span>
+
+{{#previousSlide}}
+<a href='{{previousSlide}}'>previous</a>
+{{/previousSlide}}
+
+{{#nextSlide}}
+<a href='{{nextSlide}}'>next</a>
+{{/nextSlide}}
