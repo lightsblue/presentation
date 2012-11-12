@@ -1,15 +1,22 @@
 define(function (require) {
   'use strict';
   var Backbone = require('backbone'),
-    PresentationController;
+    SlideModel = require('app/slide-model'),
+    SlideView = require('app/slide-view'),
+    PresentationController,
+    slideModel = new SlideModel(),
+    slideView = new SlideView({
+      model: slideModel
+    });
 
   PresentationController = Backbone.Router.extend({
     routes: {
       'presentation/:id': 'presentation'
     },
-    
+
     presentation: function (id) {
-      console.log('presentation', id);
+      slideModel.set('id', id);
+      slideModel.fetch();
     }
   });
 
