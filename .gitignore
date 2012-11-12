@@ -5,3 +5,4 @@ tmp/
 .sass-cache/
 www-built
 www-ghpages
+*.swp
