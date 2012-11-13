@@ -10,16 +10,26 @@ define(function (require) {
   SlideView = Backbone.View.extend({
 
     events: {
-      'click a': 'navigate'
+      'click a': 'navigate',
+      'click h1.title': 'titleClick',
+      'click pre.content': 'contentClick'
     },
 
     initialize: function () {
-      this.model.bind('change:content', this.render, this);
+      this.model.bind('change:title change:content', this.render, this);
     },
 
     navigate: function (evt) {
       this.trigger('navigate', $(evt.currentTarget).attr('href'));
       return false;
+    },
+
+    titleClick: function (evt) {
+      this.trigger('titleEdit');
+    },
+
+    contentClick: function (evt) {
+      this.trigger('contentEdit');
     },
 
     render: function () {

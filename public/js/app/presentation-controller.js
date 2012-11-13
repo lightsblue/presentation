@@ -4,6 +4,7 @@ define(function (require) {
   var Backbone = require('backbone'),
     SlideModel = require('app/slide-model'),
     SlideView = require('app/slide-view'),
+    SlideEditView = require('app/slide-edit-view'),
 
     // controller class constructor function and instance
     PresentationController,
@@ -13,6 +14,10 @@ define(function (require) {
     slideModel = new SlideModel(),
     slideView = new SlideView({
       el: $('#root'),
+      model: slideModel
+    }),
+    slideEditView = new SlideEditView({
+      el: $('#edit'),
       model: slideModel
     });
 
@@ -32,10 +37,18 @@ define(function (require) {
   controller = new PresentationController();
 
   // wire together event handling
- 
+
   slideView.bind('navigate', function (path) {
-    console.log('ctrl nav', path);
+    slideEditView.close();
     controller.navigate(path, true);
+  });
+
+  slideView.bind('titleEdit', function () {
+    slideEditView.editTitle();
+  });
+
+  slideView.bind('contentEdit', function () {
+    slideEditView.editContent();
   });
 
   $('body').keyup(function (e) {

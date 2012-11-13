@@ -1,8 +1,45 @@
 body {
+  font-family: Helvetica;
+}
+
+h1.content, pre.content {
   font-size: 40px;
   font-family: Helvetica;
 }
 
-pre.slide {
-  font-family: Helvetica;
+div.edit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  text-align: center;
+  background-color: #ddd;
+  border-left: 1px solid #bbb
+}
+
+div.edit div.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  color: #15C;
+}
+div.edit div.close:hover {
+  text-decoration: underline;
+}
+
+div.edit input.title {
+  position: absolute;
+  right: 10px;
+  top: 36px;
+  width: 375px;
+}
+
+div.edit textarea.content {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  top: 60px;
+  width: 375px;
 }
