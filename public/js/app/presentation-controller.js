@@ -28,6 +28,7 @@ define(function (require) {
     },
 
     presentation: function (id) {
+      slideEditView.close();
       slideModel.set('id', id);
       slideModel.fetch();
     }
