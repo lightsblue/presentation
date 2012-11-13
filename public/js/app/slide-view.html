@@ -2,12 +2,21 @@
 
 <pre class='content'>{{content}}</pre>
 
-<span>{{curSlide}} of {{totalSlides}}</span>
+<div class='navigation'>
 
-{{#previousSlide}}
-<a href='{{previousSlide}}'>previous</a>
-{{/previousSlide}}
+  <div>{{curSlide}} of {{totalSlides}}</div>
 
-{{#nextSlide}}
-<a href='{{nextSlide}}'>next</a>
-{{/nextSlide}}
+  {{#previousSlide}}
+  <a href='{{previousSlide}}'>previous</a>
+  {{/previousSlide}}
+  {{^previousSlide}}
+  <span>previous</span>
+  {{/previousSlide}}
+
+  {{#nextSlide}}
+  <a href='{{nextSlide}}'>next</a>
+  {{/nextSlide}}
+  {{^nextSlide}}
+  <span>next</span>
+  {{/nextSlide}}
+</div>

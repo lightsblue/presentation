@@ -2,9 +2,28 @@ body {
   font-family: Helvetica;
 }
 
-h1.content, pre.content {
-  font-size: 40px;
+h1.title, pre.content {
+  font-size: 50px;
   font-family: Helvetica;
+}
+
+h1.title {
+  text-align: center
+}
+
+
+pre.content {
+  width: 80%;
+  margin-left: 10%;
+}
+
+div.navigation {
+  position: absolute;
+  bottom: 0px;
+  width: 97%;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
 }
 
 div.edit {
@@ -25,6 +44,7 @@ div.edit div.close {
   cursor: pointer;
   color: #15C;
 }
+
 div.edit div.close:hover {
   text-decoration: underline;
 }
