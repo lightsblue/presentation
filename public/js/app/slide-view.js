@@ -48,6 +48,11 @@ define(function (require) {
       }
 
       // set this view to the output of the template
+      if (m.content.match(/^\/[a-zA-Z0-9\/]*\.png$/) !== null) {
+        m.contentIsImage = true;
+      } else {
+        m.contentIsImage = false;
+      }
       this.$el.html(mustache.to_html(html, m));
     }
   });

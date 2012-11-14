@@ -1,6 +1,14 @@
 <h1 class='title'>{{title}}</h1>
 
+{{#contentIsImage}}
+<div class='content-image'>
+  <img src='{{content}}'/>
+</div>
+{{/contentIsImage}}
+
+{{^contentIsImage}}
 <pre class='content'>{{content}}</pre>
+{{/contentIsImage}}
 
 <div class='navigation'>
 
